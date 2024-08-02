@@ -19,8 +19,22 @@ get "/" do
     erb :index
 end
 
+get "/new" do
+  erb :new
+end
+
 post "/new" do
-    erb :new
+    if params[:upload_photo]
+      image = params[:upload_photo]
+      tempfile = image[:tempfile]
+      upload = Cloudinary::Uploader.upload(tempfile.path)
+      img_url = upload['url']
+    end
+
+    post = Post.create(
+        image_url: img_url
+    )
+    redirect '/'
 end
 
 get "/:category_id" do

@@ -10,34 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_06_23_040920) do
+ActiveRecord::Schema.define(version: 2024_08_02_112117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "lists", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table "categories", force: :cascade do |t|
+    t.string "category_name"
   end
 
-  create_table "tasks", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "title"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.boolean "completed"
-    t.date "due_date"
-    t.boolean "star"
-    t.integer "list_id", default: 1
-    t.index ["user_id"], name: "index_tasks_on_user_id"
+  create_table "images", force: :cascade do |t|
+    t.string "image_url"
+    t.integer "post_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table "posts", force: :cascade do |t|
+    t.integer "category_id"
   end
 
 end
