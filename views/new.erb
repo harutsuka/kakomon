@@ -2,10 +2,10 @@
     <form method="post" action="/new" enctype="multipart/form-date" class="newpost">
         <button type="submit" id="share">シェアする</button>
         <p class="drag-drop-buttons">
-            <input id="input" type="file" accept="image/*" value="ファイルを選択" name="upload-photo" onChange="photoPreview(event)">
+            <input id="input" type="file" accept="image/*" value="ファイルを選択" name="upload_photo" onChange="photoPreview(event)">
         </p>
         <figure id="figure" style="display:none;">
-            <img id="figureImage" src="" alt="Image Preview" />
+            <img id="figureImage" src="" alt="Image Preview" style="max-width: 100%"/>
         </figure>
     </form>
 </div>

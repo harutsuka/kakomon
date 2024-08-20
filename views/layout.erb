@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>過去問共有アプリ</title>
+    <style>
+        a{
+            text-decoration:none;
+        }
+        li{
+            list-style:none;
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <div>
+            <div>
+                <a href="/">ホーム</a>
+            </div>
+            <ul>
+                <li><a href="/new">新規投稿</a></li>
+            </ul>
+        </div>
+    </nav>
     <%= yield %>
 </body>
 </html>

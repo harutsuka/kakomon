@@ -26,14 +26,24 @@ end
 post "/new" do
     if params[:upload_photo]
       image = params[:upload_photo]
-      tempfile = image[:tempfile]
-      upload = Cloudinary::Uploader.upload(tempfile.path)
-      img_url = upload['url']
+  
+      if image.is_a?(Hash)
+        tempfile = image[:tempfile]
+        upload = Cloudinary::Uploader.upload(tempfile.path)
+        img_url = upload['url']
+  
+        post = Post.new(img_url: img_url)
+        if post.save
+          flash[:notice] = "画像投稿できたよ"
+        else
+          flash[:notice] = "画像投稿できなかったよ"
+        end
+      else
+        flash[:alert] = "ファイルが正しくアップロードされてないよ"
+      end
     end
-
-    post = Post.create(
-        image_url: img_url
-    )
+    @posts = Post.all
+    
     redirect '/'
 end
 
