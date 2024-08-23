@@ -17,6 +17,8 @@ before do
 end
 
 get "/" do
+  @posts = Post.all
+  @images = Image.all
   erb :index
 end
 
@@ -32,11 +34,13 @@ post "/new" do
       img_url = upload['url']
     end
 
-    post = Image.create(
-      image_url: img_url,
-      post_id: 1
+    post = Post.create(
+      category_id: 1
     )
-    # @posts = Post.all
+    Image.create(
+      image_url: img_url,
+      post_id: post.id
+    )
     redirect '/'
 end
 
