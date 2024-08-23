@@ -4,6 +4,7 @@ require 'sinatra/reloader' if development?
 
 require 'sinatra/activerecord'
 require './models'
+require 'pry'
 
 before do 
     Dotenv.load
@@ -16,7 +17,7 @@ before do
 end
 
 get "/" do
-    erb :index
+  erb :index
 end
 
 get "/new" do
@@ -31,8 +32,9 @@ post "/new" do
       img_url = upload['url']
     end
 
-    post = Post.create(
-      img_url: img_url
+    post = Image.create(
+      image_url: img_url,
+      post_id: 1
     )
     # @posts = Post.all
     redirect '/'

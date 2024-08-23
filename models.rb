@@ -4,7 +4,6 @@ Bundler.require
 ActiveRecord::Base.establish_connection
 
 class Post < ActiveRecord::Base
-    has_many :tasks
 end
 
 class Category < ActiveRecord::Base
@@ -14,5 +13,4 @@ class Category < ActiveRecord::Base
 end
 
 class Image < ActiveRecord::Base
-    has_many :tasks
 end

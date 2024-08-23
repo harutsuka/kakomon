@@ -12,3 +12,4 @@ gem "sinatra-activerecord", "~> 2.0"
 gem "dotenv"
 gem "cloudinary"
 gem "sinatra-flash"
+gem 'pry'
