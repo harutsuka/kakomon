@@ -17,8 +17,7 @@ before do
 end
 
 get "/" do
-  @posts = Post.all
-  @images = Image.all
+  @posts = Post.includes(:images).all
   erb :index
 end
 
