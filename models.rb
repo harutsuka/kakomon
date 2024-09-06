@@ -4,14 +4,14 @@ Bundler.require
 ActiveRecord::Base.establish_connection
 
 class Post < ActiveRecord::Base
-  belongs_to :category
-  has_many :image
+  belongs_to :categories 
+  has_many :images
 end
 
 class Category < ActiveRecord::Base
-  has_many :post
+  has_many :posts
 end
 
 class Image < ActiveRecord::Base
-  belongs_to :post
+  belongs_to :posts
 end
