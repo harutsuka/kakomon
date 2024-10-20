@@ -1,7 +1,7 @@
 <div>
     <% @posts.each do |post| %>
         <% post.images.each do |image| %>
-            <img src=<%= image.image_url %>>
+            <img src=<%= image.image_url %> style="height: 300px; border:solid 1px; padding:30px; background-color:#f3f3f3">
         <% end %>
     <% end %>
 </div>
