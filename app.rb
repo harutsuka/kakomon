@@ -21,10 +21,6 @@ get "/" do
   erb :index
 end
 
-get "/new" do
-  erb :new
-end
-
 post "/new" do
     if params[:upload_photo]
       image = params[:upload_photo]
