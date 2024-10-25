@@ -1,7 +1,9 @@
+<link rel="stylesheet" href="/styles/index.css" type="text/css">
+
 <div>
     <% @posts.each do |post| %>
         <% post.images.each do |image| %>
-            <img src=<%= image.image_url %> style="height: 300px; border:solid 1px; padding:30px; background-color:#f3f3f3">
+            <img src=<%= image.image_url %> class="image">
         <% end %>
     <% end %>
 </div>
