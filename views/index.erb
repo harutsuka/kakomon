@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="/styles/index.css" type="text/css">
 
-<div>
+<div class="body">
     <% @posts.each do |post| %>
-        <% post.images.each do |image| %>
-            <img src=<%= image.image_url %> class="image">
+        <% post.images.each do |post| %>
+            <div class="posts"><%= post.post_id %></div>
         <% end %>
     <% end %>
 </div>
