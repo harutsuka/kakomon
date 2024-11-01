@@ -1,9 +1,22 @@
-a{
-    text-decoration:none;
+a {
+  text-decoration: none;
 }
-li{
-    list-style:none;
+li {
+  list-style: none;
 }
-.header{
-    height:50px;
+.header {
+  height: 50px;
+}
+.header {
+  display: flex;
+  position: relative;
+  padding: 30px;
+}
+.upload-button {
+  position: absolute;
+  right: 100px;
+}
+.title {
+  font-size: 30px;
+  font-weight: bold;
 }

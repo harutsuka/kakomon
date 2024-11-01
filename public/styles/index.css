@@ -1,6 +1,8 @@
-.image{
-    height: 300px;
-    border:solid 1px;
-    padding:30px;
-    background-color:#f3f3f3;
+.body {
+  padding: 0 100px;
+}
+.posts {
+  height: 50px;
+  background-color: #efefef;
+  margin: 5px;
 }
