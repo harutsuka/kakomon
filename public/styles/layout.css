@@ -10,7 +10,7 @@ li {
 .header {
   display: flex;
   position: relative;
-  padding: 30px;
+  padding: 20px;
 }
 .upload-button {
   position: absolute;
@@ -19,4 +19,8 @@ li {
 .title {
   font-size: 30px;
   font-weight: bold;
+}
+.upload-widget {
+  height: 300px;
+  width: 300px;
 }
