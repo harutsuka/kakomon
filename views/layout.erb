@@ -15,8 +15,10 @@
 
                 <div class="modal" id="modal">
                     <div class="modal-content">
-                        <input type="file">
-                        <button type="submit" class="button">投稿</button>
+                        <form method="post" action="/post" enctype="multipart/form-data">
+                            <input type="file">
+                            <button type="submit" class="button">投稿</button>
+                        </form>
                     </div>
                 </div>
 
