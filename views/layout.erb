@@ -11,15 +11,31 @@
         <div class="header">
             <a href="/" class="title">ホーム</a>
 
-            <div class="upload-button">
-                <button id="upload_widget" class="cloudinary-button">新規投稿</button>
-                    
+                <button id="upload_widget" class="button upload-button">新規投稿</button>
+
+                <div class="modal" id="modal">
+                    <div class="modal-content">
+                        <input type="file">
+                        <button type="submit" class="button">投稿</button>
+                    </div>
+                </div>
+
+                <%# <div class="modal js-modal" id="modal">
+                    <div class="modal-container">
+                        <div class="modal-close js-modal-close" id="closeModal">×</div>
+                            <p>開きました。</p>
+                    </div>
+                </div> %>
+                
                 <script>
-                    document.getElementById("upload_widget").addEventListener("click", function(){
-                        console.log("Clicked!!");
+                    document.getElementById("upload_widget").addEventListener("click", function() {
+                        document.getElementById('modal').style.display = 'block';
+                    }, false);
+    
+                    document.getElementById('closeModal').addEventListener("click", function() {
+                        document.getElementById('modal').style.display = 'none';
                     }, false);
                 </script>
-            </div>
         </div>
     </nav>
     <%= yield %>
