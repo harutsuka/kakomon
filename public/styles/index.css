@@ -2,7 +2,11 @@
   padding: 0 100px;
 }
 .posts {
-  height: 50px;
+  height: 60px;
   background-color: #efefef;
-  margin: 5px;
+  margin: 8px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  border-radius: 4px;
 }
