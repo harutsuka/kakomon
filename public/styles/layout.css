@@ -13,9 +13,17 @@ li {
 .title {
   font-size: 30px;
   font-weight: bold;
+  padding-left: 15px;
 }
-.upload-widget {
+.button {
   width: 100px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0067c0;
+  border-style: none;
+  border-radius: 5px;
 }
 .upload-button {
   position: absolute;
@@ -43,14 +51,4 @@ li {
   background-color: #fff;
   border-radius: 15px;
   padding: 80px;
-}
-.button {
-  width: 100px;
-  height: 50px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #0067c0;
-  border-style: none;
-  border-radius: 5px;
 }
