@@ -2,8 +2,6 @@
 
 <div class="body">
     <% @posts.each do |post| %>
-        <% post.images.each do |post| %>
-            <div class="posts"><%= post.post_id %></div>
-        <% end %>
+        <div class="posts"><%= post.subject_name %></div>
     <% end %>
 </div>

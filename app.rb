@@ -30,7 +30,7 @@ post "/post" do
     end
 
     post = Post.create(
-      category_id: 1
+      subject_name: "数学B"
     )
     Image.create(
       image_url: img_url,
