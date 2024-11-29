@@ -39,6 +39,7 @@ post "/post" do
     redirect '/'
 end
 
-get "/:category_id" do
-    erb :index
+get "/id/:id" do
+  @image = Image.find(params[:id])
+  erb :detail
 end
