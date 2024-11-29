@@ -2,6 +2,6 @@
 
 <div class="body">
     <% @posts.each do |post| %>
-        <div class="posts"><%= post.subject_name %></div>
+        <a href="/id/<%= post.id %>"><div class="posts"><%= post.subject_name %></div></a>
     <% end %>
 </div>
