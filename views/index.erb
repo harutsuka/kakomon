@@ -2,11 +2,19 @@
     
 
 <div class="body">
+    <div class="term-filter-container">
+        <select class="term-filter">
+            <option>1年前期</option>
+            <option>1年後期</option>
+            <option>2年前期</option>
+            <option>2年前期</option>
+        </select>
+    </div>
     <% @posts.each do |post| %>
         <a href="/id/<%= post.id %>"><div class="posts"><%= post.subject_name %></div></a>
     <% end %>
     <div class="button-container">
-    <button id="upload_widget" class="button upload-button">過去問を追加する</button>
+        <button id="upload_widget" class="button upload-button">過去問を追加する</button>
     </div>
     
     <div class="modal" id="modal">
@@ -14,6 +22,18 @@
             <div class="modal-content">
                 <form method="post" action="/post" enctype="multipart/form-data">
                     <input type="file" name=upload_photo required>
+                     <select class="subject-selector">
+                        <option>1年前期</option>
+                        <option>1年後期</option>
+                        <option>2年前期</option>
+                        <option>2年後期</option>
+                    </select>
+                     <select class="subject-selector">
+                        <option>数学B</option>
+                        <option>物理</option>
+                        <option>化学</option>
+                        <option>社会</option>
+                    </select>
                     <button type="submit" class="button">投稿</button>
                 </form>
             </div>

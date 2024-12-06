@@ -13,14 +13,13 @@
   font-size: 18px;
 }
 .button {
-  height: 70px;
-  font-size: 30px;
+  height: 45px;
+  font-size: 20px;
   font-weight: bold;
   color: #fff;
   background-color: #0067c0;
   border-style: none;
   border-radius: 5px;
-  margin-top: 15px;
   padding: 0 15px;
 }
 .button-container {
@@ -29,6 +28,9 @@
 }
 .upload-button {
   position: absolute;
+  margin-top: 15px;
+  height: 60px;
+  font-size: 30px;
 }
 .modal {
   display: none;
@@ -52,4 +54,21 @@
   background-color: #fff;
   border-radius: 15px;
   padding: 80px;
+}
+
+select {
+  padding: 3px;
+  font-size: 15px;
+  border-radius: 5px;
+  height: 40px;
+  padding: 0 3px;
+}
+.term-filter-container {
+  display: flex;
+  width: 100%;
+}
+.term-filter {
+  position: relative;
+  right: 0;
+  margin-bottom: 15px;
 }
