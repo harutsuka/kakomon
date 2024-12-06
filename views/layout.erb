@@ -10,29 +10,6 @@
     <nav>
         <div class="header">
             <a href="/" class="title">サービス名</a>
-
-                <button id="upload_widget" class="button upload-button">新規投稿</button>
-
-                <div class="modal" id="modal">
-                    <div class="modal-container">
-                    <div class="modal-content">
-                        <form method="post" action="/post" enctype="multipart/form-data">
-                            <input type="file" name=upload_photo required>
-                            <button type="submit" class="button">投稿</button>
-                        </form>
-                    </div>
-                    </div>
-                </div>
-                
-                <script>
-                    document.getElementById("upload_widget").addEventListener("click", function() {
-                        document.getElementById('modal').style.display = 'block';
-                    }, false);
-    
-                    document.getElementById('closeModal').addEventListener("click", function() {
-                        document.getElementById('modal').style.display = 'none';
-                    }, false);
-                </script>
         </div>
     </nav>
     <%= yield %>
