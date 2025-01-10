@@ -1,1 +1,0 @@
-Category.create([{category_name:"物理"},{category_name:"国語"}])
