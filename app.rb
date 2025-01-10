@@ -30,7 +30,8 @@ post "/post" do
     end
 
     post = Post.create(
-      subject_name: "数学B"
+      subject_name: params[:subject_name],
+      term: params[:term]
     )
     Image.create(
       image_url: img_url,
