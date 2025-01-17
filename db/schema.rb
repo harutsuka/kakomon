@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2025_01_17_141319) do
+ActiveRecord::Schema.define(version: 2025_01_17_160053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2025_01_17_141319) do
   create_table "posts", force: :cascade do |t|
     t.string "subject_name"
     t.integer "term"
-    t.string "grade"
+    t.integer "grade"
   end
 
 end
