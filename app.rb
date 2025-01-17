@@ -42,7 +42,8 @@ post "/post" do
 
     post = Post.create(
       subject_name: params[:subject_name],
-      term: params[:term]
+      term: params[:term],
+      grade: params[:grade]
     )
     Image.create(
       image_url: img_url,
