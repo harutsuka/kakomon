@@ -20,7 +20,7 @@
     </div>
 
     <% @posts.each do |post| %>
-        <a href="/id/<%= post.images.ids[0] %>"><div class="posts"><%= post.subject_name %></div></a>
+        <a href="/id/<%= post.images.ids[0] %>"><div class="posts"><%= gradeList[post.grade.to_i] %> <%= termList[post.term.to_i] %> <%= post.subject_name %></div></a>
     <% end %>
 
     <div class="button-container">
