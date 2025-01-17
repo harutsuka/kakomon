@@ -17,6 +17,9 @@ before do
 end
 
 helpers do
+  def gradeList
+    ["1年","2年","3年","4年","5年"]
+  end
   def termList
     terms = ["1年","2年","3年","4年","5年"]
   end
