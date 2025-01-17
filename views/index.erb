@@ -2,17 +2,26 @@
     
 
 <div class="body">
-    <div class="term-filter-container">
-        <select class="term-filter">
-            <option>1年前期</option>
-            <option>1年後期</option>
-            <option>2年前期</option>
-            <option>2年前期</option>
+    <div class="filter-container">
+        <form method="get" action="/">
+            <select name="term" class="filter">
+                <% gradeList.each_with_index do |grade, index| %>
+                    <option value="<%= index %>"><%= grade %></option>
+                <% end %>
+            </select>
+        </form>
+
+        <select class="filter">
+            <% termList.each_with_index do |term,index| %>
+                <option value="<%= index%>"><%= term %></option>
+            <% end %>
         </select>
     </div>
+
     <% @posts.each do |post| %>
         <a href="/id/<%= post.images.ids[0] %>"><div class="posts"><%= post.subject_name %></div></a>
     <% end %>
+
     <div class="button-container">
         <button id="upload_widget" class="button upload-button">過去問を追加する</button>
     </div>
@@ -22,14 +31,18 @@
             <div class="modal-content">
                 <form method="post" action="/post" enctype="multipart/form-data">
                     <input type="file" name=upload_photo multiple required>
-                     <select class="subject-selector" name="term">
-                        <option>1年前期</option>
-                        <option>1年後期</option>
-                        <option>2年前期</option>
-                        <option>2年後期</option>
+                     <select class="selector" name="grade">
+                        <% gradeList.each_with_index do |grade,index| %>
+                            <option value="<%= index %>"><%= grade %></option>
+                        <% end %>
                     </select>
-                    <select class="subject-selector" name="subject_name">
-                        <option>数学B</option>
+                    <select class="selector" name="term">
+                        <% termList.each_with_index do |term,index| %>
+                            <option value="<%= index %>"><%= term %></option>
+                        <% end %>
+                    </select>
+                    <select class="selector" name="subject_name">
+                        <option>数学</option>
                         <option>物理</option>
                         <option>化学</option>
                         <option>社会</option>
@@ -43,10 +56,10 @@
     <script>
         document.getElementById("upload_widget").addEventListener("click", function() {
             document.getElementById('modal').style.display = 'block';
-        }, false);
+        });
     
         document.getElementById('closeModal').addEventListener("click", function() {
             document.getElementById('modal').style.display = 'none';
-        }, false);
+        });
     </script>
 </div>
