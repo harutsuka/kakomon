@@ -11,7 +11,7 @@
         </select>
     </div>
     <% @posts.each do |post| %>
-        <a href="/id/<%= post.id %>"><div class="posts"><%= post.subject_name %></div></a>
+        <a href="/id/<%= post.images.ids[0] %>"><div class="posts"><%= post.subject_name %></div></a>
     <% end %>
     <div class="button-container">
         <button id="upload_widget" class="button upload-button">過去問を追加する</button>
