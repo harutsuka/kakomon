@@ -1,5 +1,5 @@
 .body {
-  padding: 0 120px;
+  padding: 0 6%;
   margin-top: 30px;
 }
 .posts {
@@ -49,26 +49,25 @@
   align-items: center;
 }
 .modal-content {
-  width: 800px;
-  height: 450px;
+  width: 40%;
+  height: 350px;
   background-color: #fff;
   border-radius: 15px;
-  padding: 80px;
+  padding: 10%;
 }
 
 select {
   padding: 3px;
   font-size: 15px;
   border-radius: 5px;
-  height: 40px;
-  padding: 0 3px;
+  height: 45px;
 }
-.term-filter-container {
+.filter-container {
   display: flex;
   width: 100%;
 }
-.term-filter {
+.filter {
   position: relative;
   right: 0;
-  margin-bottom: 15px;
+  margin: 0 10px 10px 0;
 }
