@@ -26,7 +26,9 @@ helpers do
 end
 
 get "/" do
-  @posts = Post.all
+  grade = params[:grade] || 0
+  term = params[:term] || 0
+  @posts = Post.where(grade: grade, term:term)
   erb :index
 end
 
