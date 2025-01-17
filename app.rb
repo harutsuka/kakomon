@@ -16,6 +16,12 @@ before do
     end 
 end
 
+helpers do
+  def termList
+    terms = ["1年","2年","3年","4年","5年"]
+  end
+end
+
 get "/" do
   @posts = Post.all
   erb :index
