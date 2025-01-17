@@ -9,13 +9,14 @@
                     <option value="<%= index %>"><%= grade %></option>
                 <% end %>
             </select>
-        </form>
 
-        <select class="filter">
-            <% termList.each_with_index do |term,index| %>
-                <option value="<%= index%>"><%= term %></option>
-            <% end %>
-        </select>
+            <select class="filter">
+                <% termList.each_with_index do |term,index| %>
+                    <option value="<%= index%>"><%= term %></option>
+                <% end %>
+            </select>
+            <button type="submit" class="button">フィルタ</button>
+        </form>
     </div>
 
     <% @posts.each do |post| %>
