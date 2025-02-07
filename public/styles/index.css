@@ -49,11 +49,30 @@
   align-items: center;
 }
 .modal-content {
-  width: 40%;
-  height: 350px;
+  width: 30%;
+  height: 570px;
   background-color: #fff;
   border-radius: 15px;
-  padding: 5%;
+  padding: 3%;
+}
+.file-select {
+  margin: 20px 0;
+}
+.file-selector {
+  text-align: center;
+  height: 200px;
+  background-color: #efefef;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-buttons {
+  text-align: center;
+}
+.modal-button {
+  scale: 120%;
+  margin-right: 20px;
 }
 
 select {
