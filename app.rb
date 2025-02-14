@@ -23,6 +23,9 @@ helpers do
   def termList
     ["前期中間","前期末","後期中間","学年末"]
   end
+  def courseList
+    ["Mコース","Dコース","Eコース","Iコース","共通"]
+  end
 end
 
 get "/" do

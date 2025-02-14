@@ -11,7 +11,11 @@
                     <% end %>><%= grade %></option>
                 <% end %>
             </select>
-
+            <select name="" class="filter">
+                <% courseList.each_with_index do |course, index| %>
+                    <option ><%= course %></option>
+                <% end %>
+            </select>
             <select class="filter" name="term">
                 <% termList.each_with_index do |term,index| %>
                     <option value="<%= index %>" 
