@@ -6,7 +6,7 @@
             <select name="grade" class="filter">
                 <% gradeList.each_with_index do |grade, index| %>
                     <option value="<%= index %>" 
-                    <% if !@posts[0] == nil && index == @posts[0].grade %>
+                    <% if @posts.any? && index == @posts[0].grade %>
                         selected
                     <% end %>><%= grade %></option>
                 <% end %>
@@ -15,7 +15,7 @@
             <select class="filter" name="term">
                 <% termList.each_with_index do |term,index| %>
                     <option value="<%= index %>" 
-                    <% if !@posts[0] == nil && index == @posts[0].term %>
+                    <% if @posts.any? && index == @posts[0].term %>
                         selected
                     <% end %>><%= term %></option>
                 <% end %>
@@ -36,13 +36,12 @@
         <div class="modal-container">
             <div class="modal-content">
                 <form method="post" action="/post" enctype="multipart/form-data">
-                    <input type="file" name=upload_photo multiple required>
-                     <select class="selector" name="grade">
+                    <select name="grade">
                         <% gradeList.each_with_index do |grade,index| %>
                             <option value="<%= index %>"><%= grade %></option>
                         <% end %>
                     </select>
-                    <select class="selector" name="term">
+                    <select name="term">
                         <% termList.each_with_index do |term,index| %>
                             <option value="<%= index %>"><%= term %></option>
                         <% end %>
