@@ -93,3 +93,19 @@ select {
   right: 0;
   margin: 0 10px 10px 0;
 }
+label {
+  background-color: #0067c0;
+  color: #efefef;
+  border-radius: 8px;
+  padding: 3%;
+  font-weight: bold;
+  font-size: 20px;
+}
+label input {
+  display: none;
+}
+
+.memo {
+  background-color: #efefef;
+  width: 100%;
+}
