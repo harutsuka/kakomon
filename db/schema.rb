@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2025_02_14_100856) do
+ActiveRecord::Schema.define(version: 2025_02_14_150002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2025_02_14_100856) do
     t.integer "term"
     t.integer "grade"
     t.string "memo"
+    t.integer "course"
   end
 
 end
