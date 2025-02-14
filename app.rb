@@ -24,14 +24,15 @@ helpers do
     ["前期中間","前期末","後期中間","学年末"]
   end
   def courseList
-    ["Mコース","Dコース","Eコース","Iコース","共通"]
+    ["共通","Mコース","Dコース","Eコース","Iコース"]
   end
 end
 
 get "/" do
   grade = params[:grade] || 0
+  course = params[:course] || 0
   term = params[:term] || 0
-  @posts = Post.where(grade: grade, term:term)
+  @posts = Post.where(grade:grade,course:course,term:term)
   erb :index
 end
 
@@ -46,7 +47,9 @@ post "/post" do
     post = Post.create(
       subject_name: params[:subject_name],
       term: params[:term],
-      grade: params[:grade]
+      grade: params[:grade],
+      memo: params[:memo],
+      course: params[:course]
     )
     Image.create(
       image_url: img_url,

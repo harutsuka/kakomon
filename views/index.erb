@@ -11,9 +11,12 @@
                     <% end %>><%= grade %></option>
                 <% end %>
             </select>
-            <select name="" class="filter">
+            <select name="course" class="filter">
                 <% courseList.each_with_index do |course, index| %>
-                    <option ><%= course %></option>
+                    <option value="<%= index %>" 
+                    <% if @posts.any? && index == @posts[0].course %>
+                        selected
+                    <% end %>><%= course %></option>
                 <% end %>
             </select>
             <select class="filter" name="term">
@@ -29,7 +32,7 @@
     </div>
 
     <% @posts.each do |post| %>
-        <a href="/id/<%= post.images.ids[0] %>"><div class="posts"><%= gradeList[post.grade.to_i] %> <%= termList[post.term.to_i] %> <%= post.subject_name %></div></a>
+        <a href="/id/<%= post.images.ids[0] %>"><div class="posts"><%= gradeList[post.grade.to_i] %> <% if post.course.to_i != 0 %><%= courseList[post.course.to_i] %><% end %> <%= termList[post.term.to_i] %> <%= post.subject_name %></div></a>
     <% end %>
 
     <div class="button-container">
