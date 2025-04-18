@@ -4,7 +4,6 @@ require 'sinatra/reloader' if development?
 
 require 'sinatra/activerecord'
 require './models'
-require 'pry'
 
 before do 
     Dotenv.load
@@ -21,7 +20,7 @@ helpers do
     ["1年","2年","3年","4年","5年"]
   end
   def termList
-    ["前期中間","前期末","後期中間","学年末"]
+    ["前期中間","前期末","後期中間","学年末","その他"]
   end
   def courseList
     ["共通","Mコース","Dコース","Eコース","Iコース"]
