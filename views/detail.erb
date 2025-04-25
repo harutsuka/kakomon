@@ -1,9 +1,11 @@
 <link rel="stylesheet" href="/styles/detail.css" type="text/css">
 
 <div class="body">
-    <object data="<%= @image.main_image_url%>" width="100%" style="height:auto; min-height:500px;"></object>
-
-    <form method="post" action="/id/<%= @image.id %>/delete">
+    <% @post.images.each do |image| %>
+        <object data="<%= image.main_image_url %>" width="100%" style="height:auto; min-height:500px;"></object>
+    <% end %>
+    
+    <form method="post" action="/id/<%= @image.ids %>/delete">
         <button type="submit" class="delete-button">この投稿を削除</button>
     </form>
 </div>
