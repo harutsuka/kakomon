@@ -36,29 +36,45 @@ get "/" do
 end
 
 post "/post" do
-    if params[:upload_photo]
-      image = params[:upload_photo]
+  main_image_urls = []
+
+  if params[:uploaded_image_main]
+    params[:uploaded_image_main].each do |image|
       tempfile = image[:tempfile]
       upload = Cloudinary::Uploader.upload(tempfile.path)
-      img_url = upload['url']
+      main_image_urls << upload['url']
     end
+  end
 
-    post = Post.create(
-      subject_name: params[:subject_name],
-      term: params[:term],
-      grade: params[:grade],
-      memo: params[:memo],
-      course: params[:course]
-    )
+  if params[:uploaded_image_sub]
+    image = params[:uploaded_image_sub]
+    tempfile = image[:tempfile]
+    upload = Cloudinary::Uploader.upload(tempfile.path)
+    sub_image_url = upload['url']
+  end
+
+  post = Post.create(
+    subject_name: params[:subject_name],
+    term: params[:term],
+    grade: params[:grade],
+    memo: params[:memo],
+    course: params[:course]
+  )
+
+  main_image_urls.each do |url|
     Image.create(
-      image_url: img_url,
-      post_id: post.id
+      post_id: post.id,
+      main_image_url: url,
+      sub_image_url: sub_image_url,
     )
-    redirect '/'
+  end
+  
+  redirect '/'
 end
 
 get "/id/:id" do
-  @image = Image.find(params[:id])
+  @post = Post.find(params[:id])
+  @image = Image.where(post_id: params[:id])
   erb :detail
 end
 
