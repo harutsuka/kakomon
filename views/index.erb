@@ -32,7 +32,7 @@
     </div>
 
     <% @posts.each do |post| %>
-        <a href="/id/<%= post.images.ids[0] %>"><div class="posts"><%= gradeList[post.grade.to_i] %> <% if post.course.to_i != 0 %><%= courseList[post.course.to_i] %><% end %> <%= termList[post.term.to_i] %> <%= post.subject_name %></div></a>
+        <a href="/id/<%= post.id %>"><div class="posts"><%= gradeList[post.grade.to_i] %> <% if post.course.to_i != 0 %><%= courseList[post.course.to_i] %><% end %> <%= termList[post.term.to_i] %> <%= post.subject_name %></div></a>
     <% end %>
 
     <div class="button-container">
