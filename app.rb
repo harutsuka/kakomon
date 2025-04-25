@@ -61,3 +61,8 @@ get "/id/:id" do
   @image = Image.find(params[:id])
   erb :detail
 end
+
+post "/id/:id/delete" do
+  Post.find(params[:id]).destroy
+  redirect "/"
+end
